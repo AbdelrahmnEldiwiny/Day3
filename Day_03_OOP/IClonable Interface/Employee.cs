@@ -28,7 +28,9 @@ namespace Day_03_OOP.IClonable_Interface
             Id = employee.Id;
             Name = employee.Name;
             Salary = employee.Salary;
-            department = (Department?)this?.department?.Clone(); // Must do Deep Copy To Avoid Changing in Values
+
+            // Modified to use the argument instead of using the 'this' which returns null
+            department = (Department?)employee?.department?.Clone(); // Must do Deep Copy To Avoid Changing in Values
                //department = employee.department;
         }
 
